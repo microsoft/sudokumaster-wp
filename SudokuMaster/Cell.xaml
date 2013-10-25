@@ -1,0 +1,54 @@
+﻿<!--
+ Copyright (c) 2011 Nokia Corporation.
+ -->
+
+<UserControl x:Class="SudokuMaster.Cell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="50" d:DesignWidth="50"
+    MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
+    ManipulationCompleted="UserControl_ManipulationCompleted">
+    
+	<UserControl.Resources>
+        <!-- Makes the cell go gradually from white/black to red -->
+        <Storyboard x:Name="fadeInAnimation">
+            <DoubleAnimation Storyboard.TargetName="BackgroundImage"
+                         Storyboard.TargetProperty="Opacity" From="1.0"
+                         To="0.0" Duration="0:0:1" />
+        </Storyboard>
+        <!-- Makes the cell go gradually from red to white/black -->
+        <Storyboard x:Name="fadeOutAnimation">
+            <DoubleAnimation Storyboard.TargetName="BackgroundImage"
+                         Storyboard.TargetProperty="Opacity" From="0.0"
+                         To="1.0" Duration="0:0:1" />
+        </Storyboard>
+        <!-- Blinks the cell twice between white and red -->
+        <Storyboard x:Name="blinkAnimation">
+            <DoubleAnimation Storyboard.TargetName="BackgroundImage"
+                         Storyboard.TargetProperty="Opacity" From="1.0"
+                         To="0.0" AutoReverse="True" RepeatBehavior="2x"
+                         Duration="0:0:0.5" />
+        </Storyboard>
+    </UserControl.Resources>
+
+    <!--LayoutRoot is the root grid where all the content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Red" Width="50" Height="50">
+        
+        <!-- The cell contains only two elements; background image and a
+        textblock. The grid's background is red so that animation change 
+        BackgroundImage opacity when the cell is selected and when blinking 
+        the cells (invalid move and game over situations) -->
+
+        <Image Name="BackgroundImage" Source="gfx/darkGridItem.png" />
+        <TextBlock Height="40" HorizontalAlignment="Center" Margin="0"
+                   Name="textValue" VerticalAlignment="Center"
+                   FontSize="28" Width="50" Foreground="Black" FontWeight="Bold"
+                   TextAlignment="Center"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<!--
+ Copyright (c) 2011 Nokia Corporation.
+ -->
+<UserControl x:Class="SudokuMaster.WaitNote"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="150" d:DesignWidth="150">
+
+    <Grid x:Name="LayoutRoot">
+        <!-- The wait note contains only a rectangle filled with the the waitnote image -->
+        <Image Width="150" Height="150" x:Name="rc" Source="/gfx/waitNote.png">
+            <!-- The animation rotates the rectangle forever -->
+            <Image.Resources>
+                <Storyboard x:Name="spinAnimation">
+                    <DoubleAnimation
+                        Storyboard.TargetName="Transform" 
+                        Storyboard.TargetProperty="Angle"
+                        By="360" 
+                        Duration="0:0:0.5"  
+                        AutoReverse="False" 
+                        RepeatBehavior="Forever" />
+                </Storyboard>
+            </Image.Resources>
+            <Image.RenderTransform>
+                <RotateTransform x:Name="Transform" CenterX="75" CenterY="75" Angle="0" />
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</UserControl>
