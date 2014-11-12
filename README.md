@@ -60,8 +60,8 @@ None.
 BUILD & INSTALLATION INSTRUCTIONS
 -------------------------------------------------------------------------------
 
-Preparations
-~~~~~~~~~~~~
+**Preparations**
+
 
 Make sure you have the following installed:
  * Windows 7
@@ -70,15 +70,14 @@ Make sure you have the following installed:
    http://go.microsoft.com/?linkid=9772716
 
 
-Build on Microsoft Visual Studio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Build on Microsoft Visual Studio**
 
 Please refer to:
 http://msdn.microsoft.com/en-us/library/ff928362.aspx
 
 
-Deploy to Windows Phone 7
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**Deploy to Windows Phone 7**
+
 Please refer to:
 http://msdn.microsoft.com/en-us/library/gg588378.aspx
 
@@ -124,9 +123,10 @@ Developed with:
 
 LICENCE
 -------------------------------------------------------------------------------
+
 You can find license details in Licence.txt file provided with this project
 or online at
-https://github.com/nokia-developer/sudokumaster-wp/blob/master/Licence.txt
+https://github.com/Microsoft/sudokumaster-wp/blob/master/Licence.txt
 
 
 CHANGE HISTORY
