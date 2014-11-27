@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nokia Corporation")]
 [assembly: AssemblyProduct("SudokuMaster")]
-[assembly: AssemblyCopyright("Copyright © Nokia Corporation 2011")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Microsoft Mobile")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
